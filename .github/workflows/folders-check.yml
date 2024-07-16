@@ -1,0 +1,15 @@
+name: Folders Check
+run-name: Checking if there's a change in folders
+on:
+    push:
+        paths: ['templates', 'css']
+jobs:
+  templates-watcher:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Templates watcher
+        run: echo ${{ github.event_path }}
+        # uses: ./.github/actions/folder-watcher
+        # with:
+        #   folder-name: 'templates'
+

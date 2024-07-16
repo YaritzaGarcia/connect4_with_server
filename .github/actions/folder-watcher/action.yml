@@ -1,0 +1,15 @@
+name: 'Folder Watcher'
+description: 'Runs every time there's a change in the specified folder'
+inputs:
+  folder-name:
+    description: 'The name of the folder that we want to watch.'
+    required: true
+    default: 'templates'
+runs:
+  using: "composite"
+  steps:
+    - name:
+      run: echo "There was a change in this folder:\ $INPUT_FOLDER."
+      shell: bash
+      env:
+        INPUT_FOLDER: ${{ inputs.folder }}
