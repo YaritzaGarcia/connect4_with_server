@@ -34,12 +34,14 @@ jobs:
         with:
           folder-name: 'templates'
 
-
-
-      # # run only if 'public/css/' files were changed
-      # - name: CSS folder watcher
-      #   if: steps.filter.outputs.path2 == 'true'
-      #   uses: ./.github/actions/folder-watcher
-      #   with:
-      #     folder-name: 'public/css/'
+  css-watcher:
+    needs: change-watcher
+    name: Templates folder watcher
+    # run only if 'templates' files were changed
+    if: ${{ needs.change-watcher.outputs.path2 == 'true'}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/folder-watcher
+        with:
+          folder-name: 'templates'
 
