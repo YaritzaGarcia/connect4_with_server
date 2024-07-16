@@ -1,12 +1,11 @@
 name: Index Listener
 run-name: Index Listener
 on:
-    push:
-        branches: ['master']
-        paths: ['templates/index.html']
+  push:
+    paths: ['templates/index.html']
 jobs:
   check-changes:
     runs-on: ubuntu-latest
     steps:
-        - name: Index Listener Check
-          run: echo "The index.html changed."
+      - name: Index Listener Check
+        run: echo "The index.html changed."
