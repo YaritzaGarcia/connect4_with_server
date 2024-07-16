@@ -2,8 +2,8 @@ name: Index Listener
 run-name: Index Listener
 on:
     push:
-        branches: ['main']
-        paths: ['templates/**']
+        branches: ['master']
+        paths: ['templates/index.html']
 jobs:
   check-changes:
     runs-on: ubuntu-latest
