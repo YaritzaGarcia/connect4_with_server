@@ -2,7 +2,7 @@ name: Folders Check
 run-name: Checking if there's a change in folders
 on:
     push:
-        paths: ['templates', 'public/css']
+        paths: ['templates/**', 'public/css/**']
 jobs:
   templates-watcher:
     runs-on: ubuntu-latest
