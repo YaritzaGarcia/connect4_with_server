@@ -3,13 +3,27 @@ run-name: Checking if there's a change in folders
 on:
     push:
         paths: ['templates/**', 'public/css/**']
+
 jobs:
   templates-watcher:
     runs-on: ubuntu-latest
     steps:
-      - name: Templates watcher
-        run: echo ${{ github.repository }}
-        # uses: ./.github/actions/folder-watcher
-        # with:
-        #   folder-name: 'templates'
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            path1:
+              - 'templates/**'
+            path2:
+              - 'public/css/**'
+
+      # run only if 'templates' files were changed
+      - name: Templates folder watcher
+        if: steps.filter.outputs.path1 == 'true'
+        run: 'echo ${{ steps.filter.outputs.path1 }}'
+
+      # run only if 'css' files were changed
+      - name: CSS folder watcher
+        if: steps.filter.outputs.path2 == 'true'
+        run: 'echo ${{ steps.filter.outputs.path2 }}'
 
