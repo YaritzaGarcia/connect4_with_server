@@ -8,6 +8,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - id: foo
-        uses: actions/hello-world-action
+        uses: ./.github/actions/hello-world-action
         with:
           who-to-greet: 'Mona the Octocat'
