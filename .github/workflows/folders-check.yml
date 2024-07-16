@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # https://github.com/marketplace/actions/paths-changes-filter#examples
       - uses: dorny/paths-filter@v3
         id: filter
         with:
@@ -25,10 +26,10 @@ jobs:
         with:
           folder-name: 'templates'
 
-      # run only if 'public/css/' files were changed
-      - name: CSS folder watcher
-        if: steps.filter.outputs.path2 == 'true'
-        uses: ./.github/actions/folder-watcher
-        with:
-          folder-name: 'public/css/'
+      # # run only if 'public/css/' files were changed
+      # - name: CSS folder watcher
+      #   if: steps.filter.outputs.path2 == 'true'
+      #   uses: ./.github/actions/folder-watcher
+      #   with:
+      #     folder-name: 'public/css/'
 
