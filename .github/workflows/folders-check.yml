@@ -22,7 +22,6 @@ jobs:
               - 'templates/**'
             path2:
               - 'public/css/**'
-          cache: 'npm'
 
   templates-watcher:
     needs: change-watcher

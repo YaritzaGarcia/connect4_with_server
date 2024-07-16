@@ -12,4 +12,4 @@ runs:
       run: echo "There was a change in this folder:\ $INPUT_FOLDER."
       shell: bash
       env:
-        INPUT_FOLDER: ${{ inputs.folder }}
+        INPUT_FOLDER: ${{ inputs.folder-name }}
