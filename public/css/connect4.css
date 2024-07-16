@@ -290,7 +290,7 @@ span {
     right:0px;
   }
   #board td {
-    width:3px;
+    width:30px;
     height:30px;
   }
 }
