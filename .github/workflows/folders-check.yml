@@ -30,6 +30,7 @@ jobs:
     if: ${{ needs.change-watcher.outputs.path1 == 'true'}}
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/folder-watcher
         with:
           folder-name: 'templates'
@@ -41,6 +42,7 @@ jobs:
     if: ${{ needs.change-watcher.outputs.path2 == 'true'}}
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/folder-watcher
         with:
           folder-name: 'public/css/**'
