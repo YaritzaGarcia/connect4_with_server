@@ -1,8 +1,10 @@
-name: Setup Node.js environment
-  uses: actions/setup-node@v4.0.3
-  with:
-    node-version: 20.x
-    node-version-file: package.json
-    check-latest: true
-    cache: npm
-    cache-dependency-path: package-lock.json
+name: My first separate action
+runs:
+  name: Setup Node.js environment
+    uses: actions/setup-node@v4.0.3
+    with:
+      node-version: 20.x
+      node-version-file: package.json
+      check-latest: true
+      cache: npm
+      cache-dependency-path: package-lock.json
