@@ -161,7 +161,7 @@ u {
 span {
   background-size: cover;
   background-repeat: no-repeat;
-  
+
 }
 @keyframes fall-animation {
   from {
@@ -290,7 +290,7 @@ span {
     right:0px;
   }
   #board td {
-    width:30px;
+    width:3px;
     height:30px;
   }
 }
