@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Templates watcher
-        run: echo ${{ github.workspace }}
+        run: echo ${{ github.ref_name  }}
         # uses: ./.github/actions/folder-watcher
         # with:
         #   folder-name: 'templates'
