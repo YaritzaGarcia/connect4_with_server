@@ -21,10 +21,14 @@ jobs:
       # run only if 'templates' files were changed
       - name: Templates folder watcher
         if: steps.filter.outputs.path1 == 'true'
-        run: 'echo ${{ steps.filter.outputs.path1 }}'
+        uses: ./.github/actions/folder-watcher
+        with:
+          folder-name: 'templates'
 
-      # run only if 'css' files were changed
+      # run only if 'public/css/' files were changed
       - name: CSS folder watcher
         if: steps.filter.outputs.path2 == 'true'
-        run: 'echo ${{ steps.filter.outputs.path2 }}'
+        uses: ./.github/actions/folder-watcher
+        with:
+          folder-name: 'public/css/'
 
