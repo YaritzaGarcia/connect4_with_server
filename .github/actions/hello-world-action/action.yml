@@ -1,6 +1,6 @@
 name: My first separate action
-using: 'node20'
 runs:
+  using: 'node20'
   steps:
     - uses: actions/setup-node@v4.0.3
       with:
