@@ -8,7 +8,7 @@ runs:
   using: "composite"
   steps:
     - name:
-      run: echo -e "There was a change in this folder \033[1m$INPUT_FOLDER"
+      run: echo -e "There was a change in the folder \033[1m$INPUT_FOLDER"
       shell: bash
       env:
         INPUT_FOLDER: ${{ inputs.folder-name }}
