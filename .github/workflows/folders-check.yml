@@ -4,6 +4,7 @@ on:
   push:
     paths: ['templates/**', 'public/css/**']
 
+permissions: read-all
 jobs:
   change-watcher:
     runs-on: ubuntu-latest

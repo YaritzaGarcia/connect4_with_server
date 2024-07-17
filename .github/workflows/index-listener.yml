@@ -3,6 +3,7 @@ run-name: Index Listener
 on:
   push:
     paths: ['templates/index.html']
+permissions: read-all
 jobs:
   check-changes:
     runs-on: ubuntu-latest
