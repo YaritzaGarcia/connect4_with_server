@@ -8,12 +8,13 @@ const app = express();
 app.use(routes);
 app.use(express.static('public'));
 
+if(true);
 
 nunjucks.configure("templates", {
     autoescape: true,
     express: app
 });
-  
+
 
 /** 404 handler */
 app.use(function(req, res, next) {
