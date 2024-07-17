@@ -37,7 +37,7 @@ jobs:
 
   css-watcher:
     needs: change-watcher
-    name: Templates folder watcher
+    name: CSS folder watcher
     # run only if 'public/css/**' files were changed
     if: ${{ needs.change-watcher.outputs.path2 == 'true'}}
     runs-on: ubuntu-latest
