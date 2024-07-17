@@ -8,7 +8,7 @@ runs:
   using: "composite"
   steps:
     - name:
-      run: "echo 'There was a change in this folder: <p><span style='font-weight: bold;'> $INPUT_FOLDER </span></p>.'"
+      run: "echo 'There was a change in this folder: <b>$INPUT_FOLDER</b>.'"
       shell: bash
       env:
         INPUT_FOLDER: ${{ inputs.folder-name }}
